@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &245592032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4273660832318477604, guid: 3c30dd3a7f9b0754480a2ae941c5e7d4, type: 3}
+  m_PrefabInstance: {fileID: 1550323375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &245592035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245592032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db718d7eb415194f8c33fb10ecacaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 438552295}
 --- !u!114 &293163848 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4376265649666234769, guid: 0756039af08644841a11ad78047ef512, type: 3}
@@ -231,6 +249,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0756039af08644841a11ad78047ef512, type: 3}
+--- !u!114 &438552295 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4118946043945662029, guid: 063afdd2616aed34391ef9cfa248f025, type: 3}
+  m_PrefabInstance: {fileID: 2061197351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b7d7cb668dce244924e5842cef9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &635678310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -288,11 +317,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 343287284390320182, guid: 799173886afe6614ab0edf9a1b1df9a5, type: 3}
       propertyPath: dialog.lines.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 343287284390320182, guid: 799173886afe6614ab0edf9a1b1df9a5, type: 3}
       propertyPath: dialog.lines.Array.data[0]
       value: What's Up?
+      objectReference: {fileID: 0}
+    - target: {fileID: 343287284390320182, guid: 799173886afe6614ab0edf9a1b1df9a5, type: 3}
+      propertyPath: dialog.lines.Array.data[1]
+      value: Seems like the dialog portion is finally fixed huh??
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 799173886afe6614ab0edf9a1b1df9a5, type: 3}
