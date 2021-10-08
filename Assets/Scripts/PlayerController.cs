@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public LayerMask foregroundElementsLayer;
     public LayerMask interactableLayer;
+    public LayerMask portalLayer;
     private bool isMoving;
     private Vector2 input;
     private Animator animator;
@@ -34,6 +35,10 @@ public class PlayerController : MonoBehaviour
                 if (isWalkable(targetPos))
                 {
                     StartCoroutine(Move(targetPos));
+                    if (Physics2D.OverlapCircle(targetPos, 0.2f, portalLayer) != null)
+                    {
+                        OnMoveOver(targetPos);
+                    }
                 }
             }
         }
@@ -42,6 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             interact();
         }
+        
     }
 
     void interact()
@@ -52,6 +58,16 @@ public class PlayerController : MonoBehaviour
         if(collidedObject != null)
         {
             collidedObject.GetComponent<Interactable>()?.interact();
+        }
+    }
+
+    void OnMoveOver(Vector3 targetPos)
+    {
+        var encounteredPortal = Physics2D.OverlapCircle(targetPos, 0.2f, portalLayer);
+        var triggerable = encounteredPortal.GetComponent<IPlayerTriggerable>();
+        if (triggerable != null)
+        {
+            triggerable.OnPlayerTriggered(this);
         }
     }
 
